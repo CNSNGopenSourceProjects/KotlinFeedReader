@@ -63,11 +63,13 @@ class ItemAdapter(val list: ArrayList<MainActivity.Item>, val context: Context) 
         holder?.titulo?.text = list[position].titulo
         holder?.autor?.text = list[position].autor
         holder?.data?.text = list[position].getDataAsString()       // Utiliza os parâmetros default para formatar a data
-// TODO: carregar a imagem -->       holder?.imagem?.setImageURI() = list[position].titulo
         holder?.bthVerMais?.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, list[position].link)
             context.startActivity(intent)
         }
+
+        // Carrega a imagem de forma assincrona
+        DownloadImageTask(holder?.imagem!!).execute(list[position].imagem)
     }
 
     /**

@@ -35,6 +35,7 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:27.0.2"
 
     implementation "com.pkmmte.pkrss:pkrss:1.2"
-    implementation "com.squareup.okhttp3:okhttp:3.9.1"
-    implementation "com.squareup.okhttp3:okhttp-urlconnection:3.9.1"
+    implementation "com.squareup.okhttp:okhttp:1.6.0"
+    implementation "com.squareup.okhttp:okhttp-urlconnection:1.6.0"
 }
+
