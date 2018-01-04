@@ -25,8 +25,16 @@ class ItemAdapter(val list: ArrayList<MainActivity.Item>, val context: Context) 
         val titulo = view.findViewById(R.id.post_titulo) as TextView
         val autor = view.findViewById(R.id.post_autor) as TextView
         val data = view.findViewById(R.id.post_data) as TextView
-        val image = view.findViewById(R.id.post_imagem) as ImageView
+        val imagem = view.findViewById(R.id.post_imagem) as ImageView
         val bthVerMais = view.findViewById(R.id.post_ver_detalhes) as Button
+
+        /**
+         * Dados básicos da classe para ajudar na visualização do debug.
+         * @return Dados preservados.
+         */
+        override fun toString(): String {
+            return "titulo:$titulo; autor:$autor; imagem:$imagem"
+        }
     }
 
     /**
@@ -54,8 +62,8 @@ class ItemAdapter(val list: ArrayList<MainActivity.Item>, val context: Context) 
     override fun onBindViewHolder(holder: ItemViewHolder?, position: Int) {
         holder?.titulo?.text = list[position].titulo
         holder?.autor?.text = list[position].autor
-        holder?.data?.text = SimpleDateFormat("dd/MMM/yyyy", Locale("pt", "BR")).format(Date(list[position].data))
-//        holder?.image?.i = list[position].titulo
+        holder?.data?.text = list[position].getDataAsString()       // Utiliza os parâmetros default para formatar a data
+// TODO: carregar a imagem -->       holder?.imagem?.setImageURI() = list[position].titulo
         holder?.bthVerMais?.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, list[position].link)
             context.startActivity(intent)
@@ -67,4 +75,12 @@ class ItemAdapter(val list: ArrayList<MainActivity.Item>, val context: Context) 
      * @return The total number of items in this adapter.
      */
     override fun getItemCount(): Int = list.size
+
+    /**
+     * Dados básicos da classe para ajudar na visualização do debug.
+     * @return Número de artigos disponíveis na lista.
+     */
+    override fun toString(): String {
+        return "ItemAdapter: list com ${list.size} artigos"
+    }
 }
