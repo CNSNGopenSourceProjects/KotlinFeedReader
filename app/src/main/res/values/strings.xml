@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Kotlin Feed Reader</string>
+    <string name="label_titulo">Título</string>
+    <string name="texto_generico_da_imagem">Imagem genérica do post</string>
+    <string name="label_autor">Autor</string>
+    <string name="label_ver_mais">Ver Mais</string>
+</resources>

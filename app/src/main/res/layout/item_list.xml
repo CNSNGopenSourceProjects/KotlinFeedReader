@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="br.com.conseng.kotlinfeedreader.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/post_cartao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/post_imagem"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:adjustViewBounds="false"
+            android:contentDescription="@string/texto_generico_da_imagem"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/post_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_titulo"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:stretchColumns="0,2">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/post_autor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/label_autor"
+                    android:textAppearance="@android:style/TextAppearance.Small"
+                    android:textColor="@color/colorPrimary" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/darker_gray" />
+
+                <TextView
+                    android:id="@+id/post_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="dd/mm/aaaa"
+                    android:textAppearance="@android:style/TextAppearance.Small"
+                    android:textColor="@color/colorPrimary"
+                    tools:ignore="HardcodedText" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/post_ver_detalhes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorAccent"
+            android:text="@string/label_ver_mais"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
